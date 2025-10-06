@@ -10,8 +10,13 @@ public class Lists
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
     public static double[] MultiplesOf(double number, int length)
     {
+        double[] multiples = new double[length];
         // TODO Problem 1 Start (don't forget to fill out the 01-prove-response.docx)
-        return new double[0]; // replace this return statement with your own
+        for (int i = 1; i<= length; i++)
+        {
+            multiples[i - 1] = i * number;
+        }
+        return multiples; // replace this return statement with your own
     }
     
     /// <summary>
@@ -24,6 +29,13 @@ public class Lists
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
+        int storage = 0;
         // TODO Problem 2 Start (don't forget to fill out the 01-prove-response.docx)
+        for (int i = 0; i < data.Count - amount; i++)
+        {
+            storage = data[0];
+            data.RemoveAt(0);
+            data.Add(storage);
+        }
     }
 }
